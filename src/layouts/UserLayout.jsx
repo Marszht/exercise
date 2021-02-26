@@ -41,7 +41,7 @@ const UserLayout = (props) => {
           <div className={styles.top}>
             <div className={styles.header}>
               <Link to="/">
-                <img alt="logo" className={styles.logo} src={'https://ha.hainanu.edu.cn/home2020/home2019/imgs/logo.png'} />
+                {/* <img alt="logo" className={styles.logo} src={'https://ha.hainanu.edu.cn/home2020/home2019/imgs/logo.png'} /> */}
                 <span className={styles.title}>DDoS攻击检测系统</span>
               </Link>
             </div>

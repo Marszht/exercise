@@ -18,6 +18,7 @@ import {
   Facet,
   Util,
 } from 'bizcharts';
+import { data1 } from './_mock.js';
 
 class Analysis extends Component {
   state = {
@@ -80,120 +81,51 @@ class Analysis extends Component {
     });
   };
 
-  isActive = (type) => {
-    const { rangePickerValue } = this.state;
+  // isActive = (type) => {
+  //   const { rangePickerValue } = this.state;
 
-    if (!rangePickerValue) {
-      return '';
-    }
+  //   if (!rangePickerValue) {
+  //     return '';
+  //   }
 
-    const value = getTimeDistance(type);
+  //   const value = getTimeDistance(type);
 
-    if (!value) {
-      return '';
-    }
+  //   if (!value) {
+  //     return '';
+  //   }
 
-    if (!rangePickerValue[0] || !rangePickerValue[1]) {
-      return '';
-    }
+  //   if (!rangePickerValue[0] || !rangePickerValue[1]) {
+  //     return '';
+  //   }
 
-    if (
-      rangePickerValue[0].isSame(value[0], 'day') &&
-      rangePickerValue[1].isSame(value[1], 'day')
-    ) {
-      return styles.currentDate;
-    }
+  //   if (
+  //     rangePickerValue[0].isSame(value[0], 'day') &&
+  //     rangePickerValue[1].isSame(value[1], 'day')
+  //   ) {
+  //     return styles.currentDate;
+  //   }
 
-    return '';
-  };
+  //   return '';
+  // };
 
   render() {
-		const data = [
-			{
-				year: 0,
-				value: 2.7
-			},
-			{
-				year: 1,
-				value: 0.1
-			},
-			{
-				year: 2,
-				value: 0.09
-			},
-			{
-				year: 3,
-				value: 0.01
-			},
-			{
-				year: 4,
-				value: 0
-			},
-			{
-				year: 5,
-				value: 0
-			},
-			{
-				year: 6,
-				value: 0
-			},
-			{
-				year: 7,
-				value: 0
-			},
-			{
-				year: 8,
-				value: 0.1
-			},
-			{
-				year: 9,
-				value: 0
-			},
-			{
-				year: 10,
-				value: 0
-			},
-			{
-				year: 11,
-				value: 0
-			},
-			{
-				year: 12,
-				value: 0.1
-			},
-			{
-				year: 13,
-				value: 0
-			},
-			{
-				year: 14,
-				value: 0
-			},
-			{
-				year: 15,
-				value: 0
-			},
-			{
-				year: 16,
-				value: 0.1
-			}
-		];
-		const cols = {
-			value: {
-				min: 0,
-				range: [0, 0.93],
-				alias: 'loss'
-			},
-			year: {
-				range: [0, 0.9],
-				alias: 'epoch'
-			}
-		};
+    const cols = {
+      value: {
+        min: 0,
+        range: [0, 0.93],
+        alias: 'loss',
+      },
+      year: {
+        range: [0, 0.9],
+        alias: 'epoch',
+      },
+    };
     return (
       <GridContent>
         <React.Fragment>
           <Suspense fallback={null}>
-            <Chart height={400} data={data} scale={cols} forceFit>
+            <Chart height={400} data={data1} scale={cols}>
+              <Legend />
               <Axis
                 name="year"
                 title={{
@@ -211,6 +143,14 @@ class Analysis extends Component {
               />
               <Axis
                 name="value"
+                line={{
+                  stroke: '#999',
+                  fill: '#999',
+                  lineWidth: 1,
+                }}
+                label={{
+                  rotate: 150,
+                }}
                 title={{
                   position: 'end',
                   offset: 5.5,
@@ -224,6 +164,7 @@ class Analysis extends Component {
                 }}
               />
               <Tooltip
+                // position="top"
                 crosshairs={{
                   type: 'y',
                 }}
