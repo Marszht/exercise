@@ -18,7 +18,8 @@ import {
   Facet,
   Util,
 } from 'bizcharts';
-import { data1 } from './_mock.js';
+import LineChart from './components/LineChart';
+import { data1, data2, data3, data4, data5 } from './_mock.js';
 
 class Analysis extends Component {
   state = {
@@ -124,87 +125,11 @@ class Analysis extends Component {
       <GridContent>
         <React.Fragment>
           <Suspense fallback={null}>
-            <Chart height={400} data={data1} scale={cols}>
-              <Legend />
-              <Axis
-                name="year"
-                title={{
-                  position: 'end',
-                  offset: 15,
-                  textStyle: {
-                    fontSize: '12',
-                    textAlign: 'center',
-                    fill: '#999',
-                    fontWeight: 'bold',
-                    rotate: 0,
-                    autoRotate: true,
-                  },
-                }}
-              />
-              <Axis
-                name="value"
-                line={{
-                  stroke: '#999',
-                  fill: '#999',
-                  lineWidth: 1,
-                }}
-                label={{
-                  rotate: 150,
-                }}
-                title={{
-                  position: 'end',
-                  offset: 5.5,
-                  textStyle: {
-                    fontSize: '12',
-                    textAlign: 'right',
-                    fill: '#999',
-                    fontWeight: 'bold',
-                    rotate: 0,
-                  },
-                }}
-              />
-              <Tooltip
-                // position="top"
-                crosshairs={{
-                  type: 'y',
-                }}
-              />
-              <Geom
-                type="line"
-                position="year*value"
-                size={2}
-                tooltip={[
-                  'year*value',
-                  (year, value) => {
-                    return {
-                      name: '数值', // 要显示的名字
-                      value,
-                      title: year,
-                    };
-                  },
-                ]}
-              />
-              <Geom
-                type="point"
-                position="year*value"
-                size={4}
-                shape={'circle'}
-                style={{
-                  stroke: '#fff',
-                  lineWidth: 1,
-                }}
-                tooltip={[
-                  'year*value',
-                  (year, value) => {
-                    return {
-                      name: '数值', // 要显示的名字
-                      value,
-                      title: year,
-                    };
-                  },
-                ]}
-              />
-            </Chart>
+            <LineChart data={data1} cols={cols} color={'green'} time="0.01"/>
+            <LineChart data={data2} cols={cols} color={'red'} time="0.1"/>
+            <LineChart data={data3} cols={cols} color={'yellow'} time="0.05"/>
+            <LineChart data={data4} cols={cols} color={'blue'} time="0.5"/>
+            <LineChart data={data5} cols={cols} color={'black'} time="1"/>
           </Suspense>
         </React.Fragment>
       </GridContent>

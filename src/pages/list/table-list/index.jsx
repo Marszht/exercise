@@ -7,6 +7,7 @@ import ProDescriptions from '@ant-design/pro-descriptions';
 import CreateForm from './components/CreateForm';
 import UpdateForm from './components/UpdateForm';
 import { queryRule, updateRule, addRule, removeRule } from './service';
+
 /**
  * 添加节点
  * @param fields
@@ -81,8 +82,8 @@ const TableList = () => {
   const [selectedRowsState, setSelectedRows] = useState([]);
   const columns = [
     {
-      title: '时间',
-      dataIndex: 'name',
+      title: 'proto',
+      dataIndex: 'proto',
       // tip: '规则名称是唯一的 key',
       // formItemProps: {
       //   rules: [
@@ -97,51 +98,31 @@ const TableList = () => {
       // },
     },
     {
-      title: '原IP地址',
-      dataIndex: 'desc',
+      title: 'saddr',
+      dataIndex: 'saddr',
       valueType: 'textarea',
     },
     {
-      title: '目的IP地址',
-      dataIndex: 'callNo',
+      title: 'sport',
+      dataIndex: 'sport',
       // sorter: true,
       hideInForm: true,
       // renderText: (val) => `${val} 万`,
     },
     {
-      title: '协议类型',
-      dataIndex: 'status',
+      title: 'daddr',
+      dataIndex: 'daddr',
       hideInForm: true,
-      valueEnum: {
-        0: {
-          text: 'UDP',
-          status: 'Default',
-        },
-        1: {
-          text: 'TCP',
-          status: 'Processing',
-        }
-      },
+    },
+
+    {
+      title: 'seq',
+      dataIndex: 'seq',
     },
     {
-      title: '长度',
-      dataIndex: 'updatedAt',
-      // sorter: true,
-      valueType: 'dateTime',
+      title: 'stddev',
+      dataIndex: 'stddev',
       hideInForm: true,
-      // renderFormItem: (item, { defaultRender, ...rest }, form) => {
-      //   const status = form.getFieldValue('status');
-
-      //   if (`${status}` === '0') {
-      //     return false;
-      //   }
-
-      //   if (`${status}` === '3') {
-      //     return <Input {...rest} placeholder="请输入异常原因！" />;
-      //   }
-
-      //   return defaultRender(item);
-      // },
     },
     // {
     //   title: '操作',

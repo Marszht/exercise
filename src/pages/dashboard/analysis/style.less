@@ -187,3 +187,83 @@
     }
   }
 }
+
+:global {
+  .ant-pro-grid-content-children {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: #fff;
+  }
+}
+
+.lineBox {
+  position: relative;
+  background-color: #fff;
+  .tips {
+    position: absolute;
+    top: 10px;
+    left: 400px;
+
+    &::before {
+      display: inline-block;
+      width: 38px;
+      height: 3px;
+      vertical-align: middle;
+      background-color: green;
+      content: '';
+    }
+  }
+  .triangle {
+    position: absolute;
+    top: 10px;
+    left: 410px;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-bottom: 8px solid green;
+  }
+  .green {
+    &::before {
+      background: green;
+    }
+  }
+  .green_tri {
+    border-bottom: 8px solid green;
+  }
+  .red {
+    &::before {
+      background: red;
+    }
+  }
+  .red_tri {
+    border-bottom: 8px solid red;
+  }
+
+  .yellow {
+    &::before {
+      background: yellow;
+    }
+  }
+  .yellow_tri {
+    border-bottom: 8px solid yellow;
+  }
+
+  .blue {
+    &::before {
+      background: blue;
+    }
+  }
+  .blue_tri {
+    border-bottom: 8px solid blue;
+  }
+
+  .black {
+    &::before {
+      background: black;
+    }
+  }
+  .black_tri {
+    border-bottom: 8px solid black;
+  }
+}

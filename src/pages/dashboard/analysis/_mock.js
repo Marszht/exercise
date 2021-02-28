@@ -266,5 +266,341 @@ const data1 = [
     value: 0.1,
   },
 ];
+const data2 = [
+  {
+    year: 0,
+    value: 0.9,
+  },
+  {
+    year: 1,
+    value: 0.3,
+  },
+  {
+    year: 2,
+    value: 0.31,
+  },
+  {
+    year: 3,
+    value: 0.4,
+  },
+  {
+    year: 4,
+    value: 0.16,
+  },
+  {
+    year: 5,
+    value: 0.2,
+  },
+  {
+    year: 6,
+    value: 0.1,
+  },
+  {
+    year: 7,
+    value: 0.14,
+  },
+  {
+    year: 8,
+    value: 0.16,
+  },
+  {
+    year: 9,
+    value: 0.19,
+  },
+  {
+    year: 10,
+    value: 0.18,
+  },
+  {
+    year: 11,
+    value: 0.3,
+  },
+  {
+    year: 12,
+    value: 0.2,
+  },
+  {
+    year: 13,
+    value: 0.18,
+  },
+  {
+    year: 14,
+    value: 0.16,
+  },
+  {
+    year: 15,
+    value: 0.14,
+  },
+  {
+    year: 16,
+    value: 0.1,
+  },
+  {
+    year: 17,
+    value: 0.08,
+  },
+  {
+    year: 18,
+    value: 0.04,
+  },
+  {
+    year: 19,
+    value: 0.1,
+  },
+];
+const data3 = [
+  {
+    year: 0,
+    value: 0.59,
+  },
+  {
+    year: 1,
+    value: 0.3,
+  },
+  {
+    year: 2,
+    value: 0.11,
+  },
+  {
+    year: 3,
+    value: 0.13,
+  },
+  {
+    year: 4,
+    value: 0.22,
+  },
+  {
+    year: 5,
+    value: 0.25,
+  },
+  {
+    year: 6,
+    value: 0.18,
+  },
+  {
+    year: 7,
+    value: 0.2,
+  },
+  {
+    year: 8,
+    value: 0.27,
+  },
+  {
+    year: 8,
+    value: 0.26,
+  },
+  {
+    year: 9,
+    value: 0.15,
+  },
+  {
+    year: 10,
+    value: 0.16,
+  },
+  {
+    year: 11,
+    value: 0.14,
+  },
+  {
+    year: 12,
+    value: 0.26,
+  },
+  {
+    year: 13,
+    value: 0.14,
+  },
+  {
+    year: 14,
+    value: 0.09,
+  },
+  {
+    year: 15,
+    value: 0.1,
+  },
+  {
+    year: 16,
+    value: 0.12,
+  },
+  {
+    year: 17,
+    value: 0.13,
+  },
+  {
+    year: 18,
+    value: 0.1,
+  },
+  {
+    year: 19,
+    value: 0.12,
+  },
+  {
+    year: 20,
+    value: 0.08,
+  },
+];
+const data4 = [
+  {
+    year: 0,
+    value: 1.9,
+  },
+  {
+    year: 1,
+    value: 0.4,
+  },
+  {
+    year: 2,
+    value: 0.6,
+  },
+  {
+    year: 3,
+    value: 0.4,
+  },
+  {
+    year: 4,
+    value: 0.5,
+  },
+  {
+    year: 5,
+    value: 0.54,
+  },
+  {
+    year: 6,
+    value: 0.7,
+  },
+  {
+    year: 7,
+    value: 0.52,
+  },
+  {
+    year: 8,
+    value: 0.4,
+  },
+  {
+    year: 9,
+    value: 0.2,
+  },
+  {
+    year: 10,
+    value: 0.18,
+  },
+  {
+    year: 11,
+    value: 0.3,
+  },
+  {
+    year: 12,
+    value: 0.21,
+  },
+  {
+    year: 13,
+    value: 0.22,
+  },
+  {
+    year: 14,
+    value: 0.19,
+  },
+  {
+    year: 15,
+    value: 0.15,
+  },
+  {
+    year: 16,
+    value: 0.1,
+  },
+  {
+    year: 17,
+    value: 0.08,
+  },
+  {
+    year: 18,
+    value: 0.05,
+  },
+  {
+    year: 19,
+    value: 0.04,
+  },
+];
+const data5 = [
+  {
+    year: 0,
+    value: 2.9,
+  },
+  {
+    year: 1,
+    value: 1.3,
+  },
+  {
+    year: 2,
+    value: 0.4,
+  },
+  {
+    year: 3,
+    value: 0.9,
+  },
+  {
+    year: 4,
+    value: 0.78,
+  },
+  {
+    year: 5,
+    value: 0.7,
+  },
+  {
+    year: 6,
+    value: 0.72,
+  },
+  {
+    year: 7,
+    value: 0.71,
+  },
+  {
+    year: 8,
+    value: 0.45,
+  },
+  {
+    year: 9,
+    value: 0.9,
+  },
+  {
+    year: 10,
+    value: 0.18,
+  },
+  {
+    year: 11,
+    value: 0.3,
+  },
+  {
+    year: 12,
+    value: 0.39,
+  },
+  {
+    year: 13,
+    value: 0.28,
+  },
+  {
+    year: 14,
+    value: 0.22,
+  },
+  {
+    year: 15,
+    value: 0.14,
+  },
+  {
+    year: 16,
+    value: 0.25,
+  },
+  {
+    year: 17,
+    value: 0.18,
+  },
+  {
+    year: 18,
+    value: 0.1,
+  },
+  {
+    year: 19,
+    value: 0.08,
+  },
+];
 
-export { data1 };
+export { data1, data2,data3, data4, data5 };
