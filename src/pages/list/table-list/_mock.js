@@ -2,8 +2,7 @@
 import { parse } from 'url';
 
 // mock tableListDataSource
-const genList = (current, pageSize) => {
-  const tableListDataSource = [];
+const genList = () => {
   const arr = [
     {
       proto: 'udp',
@@ -275,30 +274,116 @@ const genList = (current, pageSize) => {
       seq: '175094',
       stddev: 0.226784,
     },
+    {
+      proto: 'TCP',
+      saddr: '192.168.100.150',
+      sport: '48516',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '175094',
+      stddev: 0.226784,
+    },
+    {
+      proto: 'TCP',
+      saddr: '192.168.100.150',
+      sport: '48516',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '175094',
+      stddev: 0.226784,
+    },
+    {
+      proto: 'TCP',
+      saddr: '192.168.100.150',
+      sport: '48516',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '175094',
+      stddev: 0.226784,
+    },
+    {
+      proto: 'TCP',
+      saddr: '192.168.100.150',
+      sport: '48516',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '175094',
+      stddev: 0.226784,
+    },
+    {
+      proto: 'TCP',
+      saddr: '192.168.100.150',
+      sport: '48516',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '175094',
+      stddev: 0.226784,
+    },
+    {
+      proto: 'TCP',
+      saddr: '192.168.100.150',
+      sport: '48516',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '175094',
+      stddev: 0.226784,
+    },
+    {
+      proto: 'TCP',
+      saddr: '192.168.100.150',
+      sport: '48516',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '175094',
+      stddev: 0.226784,
+    },
+    {
+      proto: 'TCP',
+      saddr: '192.168.100.150',
+      sport: '48516',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '175094',
+      stddev: 0.226784,
+    },
+    {
+      proto: 'TCP',
+      saddr: '192.168.100.150',
+      sport: '48516',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '175094',
+      stddev: 0.226784,
+    },
+    {
+      proto: 'TCP',
+      saddr: '192.168.100.150',
+      sport: '48516',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '175094',
+      stddev: 0.226784,
+    },
+    {
+      proto: 'TCP',
+      saddr: '192.168.100.150',
+      sport: '48516',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '175094',
+      stddev: 0.226784,
+    },
+    {
+      proto: 'TCP',
+      saddr: '192.168.100.150',
+      sport: '48516',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '175094',
+      stddev: 0.226784,
+    },
   ];
-  for (let i = 0; i < pageSize; i += 1) {
-    const index = (current - 1) * 10 + i;
-    tableListDataSource.push({
-      key: index,
-      disabled: i % 6 === 0,
-      href: 'https://ant.design',
-      avatar: [
-        'https://gw.alipayobjects.com/zos/rmsportal/eeHMaZBwmTvLdIwMfBpg.png',
-        'https://gw.alipayobjects.com/zos/rmsportal/udxAbMEhpwthVVcjLXik.png',
-      ][i % 2],
-      name: Math./*  */ random(),
-      owner: '曲丽丽',
-      desc: '192.168.100.2',
-      callNo: '192.168.100.2',
-      status: (Math.floor(Math.random() * 10) % 2).toString(),
-      updatedAt: new Date(),
-      createdAt: new Date(),
-      progress: Math.ceil(Math.random() * 100),
-    });
-  }
-
-  tableListDataSource.reverse();
-  return arr;
+  return arr.concat(arr).concat(arr).concat(arr).concat(arr).concat(arr);
 };
 
 let tableListDataSource = genList(1, 100);
@@ -447,3 +532,4 @@ export default {
   'GET /api/rule': getRule,
   'POST /api/rule': postRule,
 };
+export { genList };
