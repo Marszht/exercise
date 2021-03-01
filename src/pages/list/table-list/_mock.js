@@ -1,15 +1,12 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { parse } from 'url';
-import csv from 'jquery-csv';
-
-
 
 // mock tableListDataSource
 const genList = (current, pageSize) => {
   const tableListDataSource = [];
   const arr = [
     {
-      proto: "TCP",
+      proto: 'udp',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -18,7 +15,79 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'tcp',
+      saddr: '192.168.100.148',
+      sport: '22267',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '143024',
+      stddev: 0.451998,
+    },
+    {
+      proto: 'udp',
+      saddr: '192.168.100.149',
+      sport: '28629',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '175094',
+      stddev: 0.226784,
+    },
+    {
+      proto: 'TCP',
+      saddr: '192.168.100.150',
+      sport: '48516',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '167033',
+      stddev: 1.931553,
+    },
+    {
+      proto: 'tcp',
+      saddr: '192.168.100.148',
+      sport: '42142',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '204615',
+      stddev: 0.428798,
+    },
+    {
+      proto: 'tcp',
+      saddr: '192.168.100.149',
+      sport: '1645',
+      daddr: '192.168.100.5',
+      dport: '80',
+      seq: '40058',
+      stddev: 2.058381,
+    },
+    {
+      proto: 'tcp',
+      saddr: '192.168.100.149',
+      sport: '39733',
+      daddr: '192.168.100.5',
+      dport: '80',
+      seq: '156396',
+      stddev: 2.177835,
+    },
+    {
+      proto: 'udp',
+      saddr: '192.168.100.147',
+      sport: '10800',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '118034',
+      stddev: 1.368196,
+    },
+    {
+      proto: 'udp',
+      saddr: '192.168.100.150',
+      sport: '19625',
+      daddr: '192.168.100.3',
+      dport: '80',
+      seq: '184672',
+      stddev: 1.788452,
+    },
+    {
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -27,7 +96,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -36,7 +105,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -45,7 +114,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -54,7 +123,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -63,7 +132,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -72,7 +141,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -81,7 +150,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -90,7 +159,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -99,7 +168,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -108,7 +177,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -117,7 +186,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -126,7 +195,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -135,7 +204,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -144,7 +213,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -153,7 +222,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -162,7 +231,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -171,7 +240,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -180,7 +249,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -189,7 +258,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -198,79 +267,7 @@ const genList = (current, pageSize) => {
       stddev: 0.226784,
     },
     {
-      proto: "TCP",
-      saddr: '192.168.100.150',
-      sport: '48516',
-      daddr: '192.168.100.3',
-      dport: '80',
-      seq: '175094',
-      stddev: 0.226784,
-    },
-    {
-      proto: "TCP",
-      saddr: '192.168.100.150',
-      sport: '48516',
-      daddr: '192.168.100.3',
-      dport: '80',
-      seq: '175094',
-      stddev: 0.226784,
-    },
-    {
-      proto: "TCP",
-      saddr: '192.168.100.150',
-      sport: '48516',
-      daddr: '192.168.100.3',
-      dport: '80',
-      seq: '175094',
-      stddev: 0.226784,
-    },
-    {
-      proto: "TCP",
-      saddr: '192.168.100.150',
-      sport: '48516',
-      daddr: '192.168.100.3',
-      dport: '80',
-      seq: '175094',
-      stddev: 0.226784,
-    },
-    {
-      proto: "TCP",
-      saddr: '192.168.100.150',
-      sport: '48516',
-      daddr: '192.168.100.3',
-      dport: '80',
-      seq: '175094',
-      stddev: 0.226784,
-    },
-    {
-      proto: "TCP",
-      saddr: '192.168.100.150',
-      sport: '48516',
-      daddr: '192.168.100.3',
-      dport: '80',
-      seq: '175094',
-      stddev: 0.226784,
-    },
-    {
-      proto: "TCP",
-      saddr: '192.168.100.150',
-      sport: '48516',
-      daddr: '192.168.100.3',
-      dport: '80',
-      seq: '175094',
-      stddev: 0.226784,
-    },
-    {
-      proto: "TCP",
-      saddr: '192.168.100.150',
-      sport: '48516',
-      daddr: '192.168.100.3',
-      dport: '80',
-      seq: '175094',
-      stddev: 0.226784,
-    },
-    {
-      proto: "TCP",
+      proto: 'TCP',
       saddr: '192.168.100.150',
       sport: '48516',
       daddr: '192.168.100.3',
@@ -289,7 +286,7 @@ const genList = (current, pageSize) => {
         'https://gw.alipayobjects.com/zos/rmsportal/eeHMaZBwmTvLdIwMfBpg.png',
         'https://gw.alipayobjects.com/zos/rmsportal/udxAbMEhpwthVVcjLXik.png',
       ][i % 2],
-      name: Math./*  */random(),
+      name: Math./*  */ random(),
       owner: '曲丽丽',
       desc: '192.168.100.2',
       callNo: '192.168.100.2',
