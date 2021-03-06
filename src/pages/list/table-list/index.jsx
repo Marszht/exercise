@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { PlusOutlined } from '@ant-design/icons';
-import { Button, Divider, message, Input, Drawer, Table } from 'antd';
+import { Button, Divider, message, Input, Drawer, Table, Progress } from 'antd';
 import React, { useState, useRef } from 'react';
 import { PageContainer, FooterToolbar } from '@ant-design/pro-layout';
 import ProTable from '@ant-design/pro-table';
@@ -8,8 +9,10 @@ import CreateForm from './components/CreateForm';
 import UpdateForm from './components/UpdateForm';
 import { queryRule, updateRule, addRule, removeRule } from './service';
 import { genList } from './_mock';
+import 'react-virtualized/styles.css';
+// import {Column} from 'react-virtualized';
 
-import  './style.less';
+import style from './style.less';
 // overflow: auto scroll;
 // max-height: 300px
 /**
@@ -37,7 +40,7 @@ const handleAdd = async (fields) => {
  */
 
 const handleUpdate = async (fields) => {
-  const hide = message.loading('正在配置');
+  const hide = message.loading('正在配置', 10);
 
   try {
     await updateRule({
@@ -59,32 +62,19 @@ const handleUpdate = async (fields) => {
  * @param selectedRows
  */
 
-const handleRemove = async (selectedRows) => {
-  const hide = message.loading('正在删除');
-  if (!selectedRows) return true;
 
-  try {
-    await removeRule({
-      key: selectedRows.map((row) => row.key),
-    });
-    hide();
-    message.success('删除成功，即将刷新');
-    return true;
-  } catch (error) {
-    hide();
-    message.error('删除失败，请重试');
-    return false;
-  }
-};
+const handleCollect = (content, duration) => {
+  const hide = message.loading(content, duration);
+}
+
+const exportData = () => {
+  const hide = message.loading('数据导出中', 10);
+}
 
 const TableList = () => {
-  console.log(genList());
-  const [createModalVisible, handleModalVisible] = useState(false);
-  const [updateModalVisible, handleUpdateModalVisible] = useState(false);
-  const [stepFormValues, setStepFormValues] = useState({});
   const actionRef = useRef();
-  const [row, setRow] = useState();
-  const [selectedRowsState, setSelectedRows] = useState([]);
+  const [showTable, setShowTable] = useState(false);
+  const [percent, setPercent] = useState(10);
   const columns = [
     {
       title: 'proto',
@@ -122,41 +112,40 @@ const TableList = () => {
       dataIndex: 'seq',
       align: 'center',
     },
-    // {
-    //   title: 'stddev',
-    //   dataIndex: 'stddev',
-    //   hideInForm: true,
-    // },
-    // {
-    //   title: '操作',
-    //   dataIndex: 'option',
-    //   valueType: 'option',
-    //   render: (_, record) => (
-    //     <>
-    //       <a
-    //         onClick={() => {
-    //           handleUpdateModalVisible(true);
-    //           setStepFormValues(record);
-    //         }}
-    //       >
-    //         配置
-    //       </a>
-    //       <Divider type="vertical" />
-    //       <a href="">订阅警报</a>
-    //     </>
-    //   ),
-    // },
   ];
   return (
     <PageContainer>
-      <Table
-        scroll={{ x: 1100 }}
-        pagination={false}
-        actionRef={actionRef}
-        rowKey="key"
-        columns={columns}
-        dataSource={genList()}
-      />
+      <div className={style.btnBox}>
+        <Button type="primary" 
+         disabled={showTable}
+         onClick={() => {
+          handleCollect('正在采集', 10);
+          setShowTable(true)
+          // setTimeout(() => {
+          //   setPercent(10/)
+          // }, 1000)
+        }}>开始采集</Button>
+        <Button type="primary" onClick={() => { handleCollect('停止采集',1)}}>停止采集</Button>
+        <Button type="primary">流量信息</Button>
+        <Button type="primary" onClick={() => {
+          exportData()
+        }}>数据导出</Button>
+      </div>
+      {/* <Progress
+        className={style.progress} 
+        percent={percent}   
+        status="active" 
+        format={ (per) => `采集进度${per}%`  }/> */}
+      {showTable && (
+        <Table
+          scroll={{ x: 1200 }}
+          pagination={false}
+          actionRef={actionRef}
+          rowKey="key"
+          columns={columns}
+          dataSource={genList()}
+        />
+      )}
     </PageContainer>
   );
 };

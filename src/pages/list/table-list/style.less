@@ -1,7 +1,36 @@
 
 :global {
-  .ant-table-content {
-    max-height: 400px !important;
-    overflow: auto scroll !important;
+  .ant-pro-grid-content {
+    background-color: #fff;
   }
+  .ant-table-container {
+    position: relative;
+    .ant-table-content {
+      max-height: 400px !important;
+      overflow: auto scroll !important;
+    }
+  }
+  .ant-pro-setting-drawer-handle {
+    display: none;
+  }
+  .ant-pro-sider-logo {
+    img {
+      display: none;
+    }
+  }
+}
+
+.btnBox {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  background-color: #fff;
+}
+
+.progress {
+  display: block;
+  width: 80%;
+  margin: 20px auto; 
+  padding: 10px;
 }

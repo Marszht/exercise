@@ -383,7 +383,7 @@ const genList = () => {
       stddev: 0.226784,
     },
   ];
-  return arr.concat(arr).concat(arr).concat(arr).concat(arr).concat(arr);
+  return arr.concat(arr);
 };
 
 let tableListDataSource = genList(1, 100);
