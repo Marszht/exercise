@@ -1,10 +1,11 @@
 import { Button, Radio, Form, Modal } from 'antd';
-import React, { Component, Suspense } from 'react';
+import React, { Component } from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import { connect } from 'umi';
 import styles from './style.less';
 
 import LineChart from '../../dashboard/analysis/components/LineChart';
+import Curved from './lineChart';
 import { data1, data2, data3, data4, data5 } from '../../dashboard/analysis/_mock';
 
 class Basic extends Component {
@@ -80,7 +81,7 @@ class Basic extends Component {
           </Button>
         </div>
         {this.state.isDisabled && (
-          <div style={{display: 'flex', flexWrap: 'wrap'}}>
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             <LineChart data={data1} cols={cols} color={'green'} time="0.01" />
             <LineChart data={data2} cols={cols} color={'red'} time="0.05" />
             <LineChart data={data3} cols={cols} color={'yellow'} time="0.05" />
@@ -88,6 +89,8 @@ class Basic extends Component {
             <LineChart data={data5} cols={cols} color={'black'} time="1" />
           </div>
         )}
+
+        <Curved />
       </PageContainer>
     );
   }
