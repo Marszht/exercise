@@ -7,13 +7,16 @@ import './style.less';
 export default class Curved extends React.Component {
   getOption = () => {
     // const dataSeries = [93, 93.2, 93.4, 93.6, 93.9, 94.2, 94.6, 94.8, 94.9, 94.6, 94.5];
-    const { dataSeries, minYAxis, maxYAxis, dataXAxis, colorEchart } = this.props;
+    const { dataSeries, minYAxis, dataXAxis, colorEchart } = this.props;
     const option = {
       title: {
         show: true,
-        text: 'training set',
+        text: 'Training Set',
         bottom: 10,
-        left: 250,
+        left: 220,
+        textStyle: {
+          fontWeight: 'bold',
+        },
         // textAlign: 'center',
       },
       grid: {
@@ -51,12 +54,15 @@ export default class Curved extends React.Component {
       yAxis: {
         type: 'value',
         min: minYAxis,
-        max: maxYAxis,
+        // max: maxYAxis,
         axisLine: {
           show: true,
         },
         axisTick: {
           show: true,
+        },
+        splitLine: {
+          interval: 0,
         },
       },
       series: [
