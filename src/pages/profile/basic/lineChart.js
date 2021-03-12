@@ -27,13 +27,9 @@ export default class Curved extends React.Component {
         type: 'category',
         boundaryGap: false,
         data: dataXAxis,
-        // axisLabel: {
-        //   align: 'center',
-        //   // formatter: (value, index) => {
-        //   //   console.log({ value });
-        //   //   return +value - 800;
-        //   // },
-        // },
+        axisLabel: {
+          fontWeight: 600,
+        },
         // splitLine: {
         //   lineStyle: {
         //     type: 'dashed',
@@ -57,6 +53,9 @@ export default class Curved extends React.Component {
         // max: maxYAxis,
         axisLine: {
           show: true,
+        },
+        axisLabel: {
+          fontWeight: 600,
         },
         axisTick: {
           show: true,
@@ -83,7 +82,7 @@ export default class Curved extends React.Component {
     return (
       <div style={{ position: 'relative' }}>
         <div className="left_text">Accuracy</div>
-        <ReactECharts option={this.getOption()} style={{ height: 400, width: 600 }} />
+        <ReactECharts option={this.getOption()} style={{ height: 400, width: 550 }} />
         <div className="box">
           <div className={`tips ${colorEchart}`}>SVM</div>
           <div className="triangle"></div>
