@@ -11,7 +11,7 @@ export default class Curved extends React.Component {
     const option = {
       title: {
         show: true,
-        text: 'Training Set',
+        text: 'Test Set',
         bottom: 10,
         left: 220,
         textStyle: {
