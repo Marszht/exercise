@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts/core';
 
-// import { SimpleData } from './model';
-
 export default class SimpleEchartLine extends Component {
   getOption = () => {
+    const { SimpleData } = this.props;
+    const { yAxisMax, yAxisMin, name, splitNumber } = SimpleData;
     const option = {
       title: {
         left: 'center',
@@ -18,6 +18,7 @@ export default class SimpleEchartLine extends Component {
       // tooltip: {
       //   trigger: 'axis',
       // },
+      // SVM,C4.5,ours,Bayes
       legend: {
         data: [
           {
@@ -26,15 +27,15 @@ export default class SimpleEchartLine extends Component {
           },
           {
             icon: 'diamond',
-            name: 'AS-CNN',
+            name: 'C4.5',
           },
           {
             icon: 'triangle',
-            name: 'CS-CNN',
+            name: 'ours',
           },
           {
             icon: 'circle',
-            name: 'SS-CNN',
+            name: 'Bayes',
           },
         ],
       },
@@ -51,15 +52,17 @@ export default class SimpleEchartLine extends Component {
       },
       yAxis: {
         type: 'value',
-        name: 'FR',
+        name,
         nameLocation: 'center',
-        max: 0.1,
-        min: 0.01,
+        max: yAxisMax,
+        splitNumber,
+        min: yAxisMin,
         nameTextStyle: {
           padding: [0, 0, 30, 0],
           fontSize: 16,
         },
         axisTick: {
+          interval: 1,
           show: true,
         },
         axisLine: {
@@ -70,26 +73,34 @@ export default class SimpleEchartLine extends Component {
         {
           name: 'SVM',
           type: 'line',
+          symbol: 'roundRect',
+          symbolSize: 10,
           // stack: '总量',
-          data: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+          data: SimpleData.SVM.data,
         },
         {
-          name: 'AS-CNN',
+          name: 'C4.5',
           type: 'line',
+          symbol: 'diamond',
+          symbolSize: 10,
           // stack: '总量',
-          data: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+          data: SimpleData['AS-CNN'].data,
         },
         {
-          name: 'CS-CNN',
+          name: 'Bayes',
           type: 'line',
+          symbol: 'triangle',
+          symbolSize: 10,
           // stack: '总量',
-          data: [0.002, 0, 0, 0, 0, 0, 0.004, 0, 0],
+          data: SimpleData['CS-CNN'].data,
         },
         {
-          name: 'SS-CNN',
+          name: 'ours',
           type: 'line',
+          symbol: 'circle',
+          symbolSize: 10,
           // stack: '总量',
-          data: [0.009, 0.01, 0, 0, 0, 0, 0, 0, 0],
+          data: SimpleData['SS-CNN'].data,
         },
       ],
     };

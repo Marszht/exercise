@@ -10,6 +10,8 @@ import ComplexEchart from './ComplexEchart';
 import SimpleEchartLine from './SimpleEchartLine';
 import { data1, data2, data3, data4, data5 } from '../../dashboard/analysis/_mock';
 
+import { SimpleData, SimpleData1, SimpleData2 } from './model';
+
 class Basic extends Component {
   state = {
     isDisabled: false,
@@ -162,7 +164,11 @@ class Basic extends Component {
         )}
 
         {this.state.show && <ComplexEchart />}
-        <SimpleEchartLine />
+        {/* <SimpleEchartLine /> */}
+        <SimpleEchartLine SimpleData={SimpleData} />
+        <SimpleEchartLine SimpleData={SimpleData1} />
+        <SimpleEchartLine SimpleData={SimpleData2} />
+        {/* <SimpleEchartLine /> */}
       </PageContainer>
     );
   }
