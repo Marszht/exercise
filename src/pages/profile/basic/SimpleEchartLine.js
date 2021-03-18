@@ -50,6 +50,11 @@ export default class SimpleEchartLine extends Component {
         boundaryGap: false,
         data: [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1],
       },
+      toolbox: {
+        feature: {
+          saveAsImage: {},
+        },
+      },
       yAxis: {
         type: 'value',
         name,
@@ -58,7 +63,7 @@ export default class SimpleEchartLine extends Component {
         splitNumber,
         min: yAxisMin,
         nameTextStyle: {
-          padding: [0, 0, 30, 0],
+          padding: [0, 0, 20, 0],
           fontSize: 16,
         },
         axisTick: {
@@ -89,7 +94,7 @@ export default class SimpleEchartLine extends Component {
         {
           name: 'Bayes',
           type: 'line',
-          symbol: 'triangle',
+          symbol: 'circle',
           symbolSize: 10,
           // stack: '总量',
           data: SimpleData['CS-CNN'].data,
@@ -97,7 +102,7 @@ export default class SimpleEchartLine extends Component {
         {
           name: 'ours',
           type: 'line',
-          symbol: 'circle',
+          symbol: 'triangle',
           symbolSize: 10,
           // stack: '总量',
           data: SimpleData['SS-CNN'].data,
