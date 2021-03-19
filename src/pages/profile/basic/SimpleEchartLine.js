@@ -39,16 +39,25 @@ export default class SimpleEchartLine extends Component {
           },
         ],
       },
-      // grid: {
-      //   left: '10%',
-      //   // right: '4%',
-      //   // bottom: '3%',
-      //   containLabel: true,
-      // },
+      grid: {
+        // left: '10%',
+        // right: '4%',
+        // bottom: '3%',
+        containLabel: true,
+      },
       xAxis: {
         type: 'category',
         boundaryGap: false,
         data: [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1],
+        // axisLine: {
+        //   show: false,
+        // },
+        // axisTick: {
+        //   show: false,
+        // },
+        // axisLabel: {
+        //   show: false,
+        // },
       },
       toolbox: {
         feature: {
