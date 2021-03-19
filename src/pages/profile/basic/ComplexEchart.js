@@ -196,6 +196,7 @@ export default class ComplexEchart extends Component {
       <div>
         <ReactECharts
           echarts={echarts}
+          opts={{ renderer: 'svg' }}
           option={this.getOption()}
           style={{ height: 400, width: 800, paddingLeft: 50 }}
         />

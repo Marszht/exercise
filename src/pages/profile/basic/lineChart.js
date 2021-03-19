@@ -1,6 +1,12 @@
 import React from 'react';
 
 import ReactECharts from 'echarts-for-react';
+import * as echarts from 'echarts/core';
+
+import {
+  // CanvasRenderer,
+  SVGRenderer,
+} from 'echarts/renderers';
 
 import './style.less';
 
@@ -12,7 +18,7 @@ export default class Curved extends React.Component {
       title: {
         show: true,
         text: 'Test Set',
-        bottom: 10,
+        bottom: 0,
         left: 220,
         textStyle: {
           fontWeight: 'bold',
@@ -21,6 +27,8 @@ export default class Curved extends React.Component {
       },
       grid: {
         show: true,
+        top: 50,
+        bottom: 50,
       },
       tooltip: {},
       xAxis: {
@@ -78,11 +86,17 @@ export default class Curved extends React.Component {
   };
 
   render() {
+    echarts.use([SVGRenderer]);
     const { colorEchart } = this.props;
     return (
       <div style={{ position: 'relative' }}>
         <div className="left_text">Accuracy</div>
-        <ReactECharts option={this.getOption()} style={{ height: 400, width: 550 }} />
+        <ReactECharts
+          echarts={echarts}
+          opts={{ renderer: 'svg' }}
+          option={this.getOption()}
+          style={{ height: 340, width: 550 }}
+        />
         <div className="box">
           <div className={`tips ${colorEchart}`}>SVM</div>
           <div className="triangle"></div>

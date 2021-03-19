@@ -5,7 +5,7 @@ import styles from '../style.less';
 const LineChart = ({ data, cols, color, time }) => {
   return (
     <div className={styles.lineBox}>
-      <Chart height={400} data={data} scale={cols}>
+      <Chart height={400} data={data} scale={cols} renderer="svg">
         <Axis
           name="year"
           title={{

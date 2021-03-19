@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts/core';
 
+import {
+  // CanvasRenderer,
+  SVGRenderer,
+} from 'echarts/renderers';
+
 export default class SimpleEchartLine extends Component {
   getOption = () => {
     const { SimpleData } = this.props;
@@ -9,10 +14,10 @@ export default class SimpleEchartLine extends Component {
     const option = {
       title: {
         left: 'center',
-        bottom: 10,
-        text: '采集时间间隔/s',
+        bottom: 0,
+        text: 'Time/s',
         textStyle: {
-          fontSize: '16',
+          fontSize: '14',
         },
       },
       // tooltip: {
@@ -20,6 +25,10 @@ export default class SimpleEchartLine extends Component {
       // },
       // SVM,C4.5,ours,Bayes
       legend: {
+        top: '6%',
+        textStyle: {
+          color: 'rgba(0, 0, 0, 0.85)',
+        },
         data: [
           {
             icon: 'roundRect',
@@ -31,7 +40,7 @@ export default class SimpleEchartLine extends Component {
           },
           {
             icon: 'triangle',
-            name: 'ours',
+            name: 'Ours',
           },
           {
             icon: 'circle',
@@ -42,7 +51,7 @@ export default class SimpleEchartLine extends Component {
       grid: {
         // left: '10%',
         // right: '4%',
-        // bottom: '3%',
+        bottom: '10%',
         containLabel: true,
       },
       xAxis: {
@@ -55,15 +64,17 @@ export default class SimpleEchartLine extends Component {
         // axisTick: {
         //   show: false,
         // },
-        // axisLabel: {
-        //   show: false,
-        // },
-      },
-      toolbox: {
-        feature: {
-          saveAsImage: {},
+        axisLabel: {
+          color: 'rgba(0, 0, 0, 0.85)',
         },
       },
+      // toolbox: {
+      //   feature: {
+      //     saveAsImage: {
+      //       type: 'svg'
+      //     },
+      //   },
+      // },
       yAxis: {
         type: 'value',
         name,
@@ -71,9 +82,11 @@ export default class SimpleEchartLine extends Component {
         max: yAxisMax,
         splitNumber,
         min: yAxisMin,
+        nameGap: 35,
         nameTextStyle: {
-          padding: [0, 0, 20, 0],
-          fontSize: 16,
+          fontSize: 14,
+          fontWeight: 600,
+          color: 'rgba(0, 0, 0, 0.85)',
         },
         axisTick: {
           interval: 1,
@@ -81,6 +94,9 @@ export default class SimpleEchartLine extends Component {
         },
         axisLine: {
           show: true,
+        },
+        axisLabel: {
+          color: 'rgba(0, 0, 0, 0.85)',
         },
       },
       series: [
@@ -109,7 +125,7 @@ export default class SimpleEchartLine extends Component {
           data: SimpleData['CS-CNN'].data,
         },
         {
-          name: 'ours',
+          name: 'Ours',
           type: 'line',
           symbol: 'triangle',
           symbolSize: 10,
@@ -122,12 +138,14 @@ export default class SimpleEchartLine extends Component {
   };
 
   render() {
+    echarts.use([SVGRenderer]);
     return (
       <div>
         <ReactECharts
           echarts={echarts}
           option={this.getOption()}
           style={{ height: 400, width: 600 }}
+          opts={{ renderer: 'svg' }}
         />
       </div>
     );

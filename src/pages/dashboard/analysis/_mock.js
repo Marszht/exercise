@@ -383,15 +383,15 @@ const data3 = [
   },
   {
     year: 8,
-    value: 0.27,
+    value: 0.24,
   },
-  {
-    year: 8,
-    value: 0.26,
-  },
+  // {
+  //   year: 8,
+  //   value: 0.26,
+  // },
   {
     year: 9,
-    value: 0.15,
+    value: 0.2,
   },
   {
     year: 10,
@@ -399,19 +399,19 @@ const data3 = [
   },
   {
     year: 11,
-    value: 0.14,
+    value: 0.2,
   },
   {
     year: 12,
-    value: 0.26,
+    value: 0.24,
   },
   {
     year: 13,
-    value: 0.14,
+    value: 0.2,
   },
   {
     year: 14,
-    value: 0.09,
+    value: 0.13,
   },
   {
     year: 15,
@@ -603,4 +603,4 @@ const data5 = [
   },
 ];
 
-export { data1, data2,data3, data4, data5 };
+export { data1, data2, data3, data4, data5 };

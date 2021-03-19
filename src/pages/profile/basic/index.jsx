@@ -84,15 +84,15 @@ class Basic extends Component {
             停止检测
           </Button>
         </div>
-        {this.state.isDisabled && (
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <LineChart data={data1} cols={cols} color={'green'} time="0.01" />
-            <LineChart data={data2} cols={cols} color={'red'} time="0.05" />
-            <LineChart data={data3} cols={cols} color={'yellow'} time="0.05" />
-            <LineChart data={data4} cols={cols} color={'blue'} time="0.5" />
-            <LineChart data={data5} cols={cols} color={'black'} time="1" />
-          </div>
-        )}
+        {/* {this.state.isDisabled && ( */}
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          <LineChart data={data1} cols={cols} color={'green'} time="0.01" />
+          <LineChart data={data2} cols={cols} color={'red'} time="0.05" />
+          <LineChart data={data3} cols={cols} color={'blue'} time="0.05" />
+          <LineChart data={data4} cols={cols} color={'yellow'} time="0.5" />
+          <LineChart data={data5} cols={cols} color={'black'} time="1" />
+        </div>
+        {/* )} */}
         {this.state.show && (
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             <Curved
