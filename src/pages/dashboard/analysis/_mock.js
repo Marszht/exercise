@@ -269,67 +269,67 @@ const data1 = [
 const data2 = [
   {
     year: 0,
-    value: 0.9,
+    value: 2.7,
   },
   {
     year: 1,
-    value: 0.3,
-  },
-  {
-    year: 2,
-    value: 0.31,
-  },
-  {
-    year: 3,
-    value: 0.4,
-  },
-  {
-    year: 4,
-    value: 0.16,
-  },
-  {
-    year: 5,
-    value: 0.2,
-  },
-  {
-    year: 6,
     value: 0.1,
   },
   {
+    year: 2,
+    value: 0.09,
+  },
+  {
+    year: 3,
+    value: 0.01,
+  },
+  {
+    year: 4,
+    value: 0,
+  },
+  {
+    year: 5,
+    value: 0,
+  },
+  {
+    year: 6,
+    value: 0,
+  },
+  {
     year: 7,
-    value: 0.14,
+    value: 0,
   },
   {
     year: 8,
-    value: 0.16,
+    value: 0.1,
   },
   {
     year: 9,
-    value: 0.19,
+    value: 0,
   },
   {
     year: 10,
-    value: 0.18,
+    value: 0,
   },
   {
     year: 11,
-    value: 0.3,
+    value: 0,
   },
   {
     year: 12,
-    value: 0.2,
+    value: 0.1,
   },
   {
     year: 13,
-    value: 0.18,
+    value: 0,
   },
   {
     year: 14,
-    value: 0.16,
+    value: 0,
   },
   {
     year: 15,
-    value: 0.14,
+    value: 0,
   },
   {
     year: 16,
